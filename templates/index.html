@@ -3,35 +3,69 @@
     <title> HOTEL NAME </title>
     <link rel="stylesheet" href="{{url_for('templates', path='/styles.css')}}">
 </head>
-<body>
     <section class="title">
-        <a id="phone_number">
-            +79888888888
-        </a>
-        <a href="#" id="logo">
-            <img src="{{url_for('templates', path='/logo.png')}}" width="60" height="60">
-        </a>
-        <a href="#" id="book_link">
-            Book right now
-        </a>
+        <div id="contacts">
+            <a id="phone_number" href="#">
+                +79888888888
+            </a>
+            <a href="#" id="logo">
+                <img src="{{url_for('templates', path='/logo.png')}}" width="60" height="60">
+            </a>
+            <a href="#" id="book_link">
+                Book right now
+            </a>
+        </div>
+        <div>
+            <ul id="navbar">
+                <li>
+                    Rooms
+                </li>
+                <li>
+                    History
+                </li>
+                <li>
+                    Gallery
+                </li>
+                <li>
+                    Spa & Wellness
+                </li>
+                <li>
+                    Restraunts
+                </li>
+            </ul>
+        </div>
     </section>
-    <div>
-        <ul class="navbar">
-            <li>
-                Rooms
-            </li>
-            <li>
-                History
-            </li>
-            <li>
-                Gallery
-            </li>
-            <li>
-                Spa & Wellness
-            </li>
-            <li>
-                Restraunts
-            </li>
-        </ul>
-    </div>
+    <section class="greeting">
+    </section>
+    <section class="about-us">
+        <div class="history">
+            <div class="hist-container">
+                <p class="para_title">Прочувствуйте историю</p>
+                <p>Наш отель Romance Istanbul с 40 номерами располагается на стыке важной части исторического полуострова и современного Стамбула. Роскошные номера, декорированные в стиле величественных османских дворцов, подарят нашим гостям изысканный отдых в окружении древних руин Османской империи и унесут в путешествие во времени, пропитанное сказочной атмосферой. Знаменитое турецкое гостеприимство подарит незабываемое путешествие. Отель наполнит яркими красками ваш отдых в Стамбуле и подарит уникальную возможность получить максимум приятных впечатлений от Стамбула.</p>
+            </div>
+            <img src="{{url_for('templates', path='/kat_1_govde.png.webp')}}">
+        </div>
+        <div class="reviews-wrapper">
+            <p class="para_title">Отзывы гостей</p>
+            <div class="reviews-box">
+                <div class="review">
+                    <p>Great service, amazing food, recomendad 100% 10/10 i love this city and her people….. This is my first time in this country and city, i need more visits un this city and this amazing people!!!! Goodbye</p>
+                </div>
+                <div class="review">
+                    <p>Location is in city centre,galata tower,taksim,old town,bosphorus ,Spice and grand bazaar are all walking distance, the room is very comfortable and clean,great staff and service,swimming pool and fitness centre</p>
+                    
+                </div>
+                <div class="review">
+                    <p>Home away home,we stayed in this hotel for a few friends, it’s in the historical side of Istanbul,grand bazaar,spice bazaar,topkapi palace,sultanahmet mosque are all close by,no hammam in istanbul at the moment due to COVID restrictions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="copyrights">
+            <span>
+                © COPYRIGHT 2024 <a href="https://github.com/ilayq">https://github.com/ilayq</a>
+            </span>
+        </div>
+    </footer>
 </body>
