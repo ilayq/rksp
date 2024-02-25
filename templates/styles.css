@@ -1,0 +1,30 @@
+.title{
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+#phone_number{
+    justify-content: left;
+    margin-top: +25px;
+}
+
+#logo{
+    justify-content: center;
+}
+
+#book_link{
+    justify-content: right;
+    margin-top: +25px;
+}
+
+.navbar{
+    margin-left: 15%;
+    margin-right: 15%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
