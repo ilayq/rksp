@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+    <title> Rooms </title>
+    <link rel="stylesheet" href="{{url_for('templates', path='/rooms/styles.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="title">
+        <div id="contacts">
+            <a id="phone_number" href="#">
+                +79888888888
+            </a>
+            <a href="/" id="logo">
+                <img src="{{url_for('templates', path='/root/romance-tek.webp')}}" width="125" height="100">
+            </a>
+            <a href="#" id="book_link">
+                Book right now
+            </a>
+        </div>
+        <div>
+            <ul id="navbar">
+                <li>
+                    <a href="/rooms">Rooms</a>
+                </li>
+                <li>
+                    <a href="/history">History</a>
+                </li>
+                <li>
+                    <a href="/gallery">Gallery</a>
+                </li>
+                <li>
+                    <a href="/spa">Spa & Wellness</a>
+                </li>
+                <li>
+                    <a href="/restraunts">Restraunts</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="rooms">
+        <p id="rooms_title">Rooms</p>
+        <div class="roombox">
+            <div class="room_text_left">
+                <div class="text">
+                    <p class="room_name">Номер с видом на город</p>
+                    <div class="description">Наши тщательно продуманные номера с видом на город предлагают гостям комфортное проживание с нотками ностальгии, элегантным декором и эксклюзивными рубашками-талисманами, которые словно экспонаты украшают стены</div>
+                </div>
+                <img src="{{url_for('templates', path='/rooms/city-room-cover.webp')}}">
+            </div>
+        </div>
+        <div class="roombox">
+            <div class="room_text_right">
+                <img src="{{url_for('templates', path='/rooms/Deluxe-Double-cover.webp')}}">
+                <div class="text">
+                    <p class="room_name">Номера Deluxe</p>
+                    <div class="description">В номерах Deluxe вы можете не только насладиться изумительным видом на исторический город, но и получить незабываемые впечатления во время отпуска в Стамбуле. Наши номера Deluxe, декорированные тщательно подобранными материалами и неповторимыми стилями, погрузят вас в сказочную атмосферу. Стены номеров украшены рубашками-талисманами османских султанов, которые привнесут волшебности в вашу ночь. Номер Deluxe, в котором есть одна кровать размера «king-size» или две односпальные кровати, подарит вам уникальную возможность проживания, не поступаясь комфортом.</div>
+                </div>
+            </div>
+        </div>
+        <div class="roombox">
+            <div class="room_text_left">
+                <div class="text">
+                    <p class="room_name">Номер Deluxe 3-местный</p>
+                    <div class="description">Стильный и комфортный трехместный номер Deluxe - это прекрасный вариант для тех, кто путешествует с семьей и друзьями. В трехместном номере Deluxe с тремя односпальными кроватями вы и ваша семья почувствуете себя частью настоящей османской семьи.</div>
+                </div>
+                <img src="{{url_for('templates', path='/rooms/triple-room-2-cover.webp')}}">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="copyrights">
+            <span>
+                © COPYRIGHT 2024 <a href="https://github.com/ilayq">https://github.com/ilayq</a>
+            </span>
+        </div>
+    </footer>
+</body>

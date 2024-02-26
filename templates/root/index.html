@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <head>
     <title> HOTEL NAME </title>
-    <link rel="stylesheet" href="{{url_for('templates', path='/styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('templates', path='/root/styles.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
     <section class="title">
         <div id="contacts">
             <a id="phone_number" href="#">
                 +79888888888
             </a>
-            <a href="#" id="logo">
-                <img src="{{url_for('templates', path='/logo.png')}}" width="60" height="60">
+            <a href="/" id="logo">
+                <img src="{{url_for('templates', path='/root/romance-tek.webp')}}" width="125" height="100">
             </a>
             <a href="#" id="book_link">
                 Book right now
@@ -18,25 +21,24 @@
         <div>
             <ul id="navbar">
                 <li>
-                    Rooms
+                    <a href="/rooms">Rooms</a>
                 </li>
                 <li>
-                    History
+                    <a href="/history">History</a>
                 </li>
                 <li>
-                    Gallery
+                    <a href="/gallery">Gallery</a>
                 </li>
                 <li>
-                    Spa & Wellness
+                    <a href="/spa">Spa & Wellness</a>
                 </li>
                 <li>
-                    Restraunts
+                    <a href="/restraunts">Restraunts</a>
                 </li>
             </ul>
         </div>
     </section>
     <section class="greeting">
-        <!-- <img src="{{url_for('templates', path='/romsl4.webp')}}"> -->
     </section>
     <section class="about-us">
         <div class="history">
@@ -44,7 +46,7 @@
                 <p class="para_title">Прочувствуйте историю</p>
                 <p>Наш отель Romance Istanbul с 40 номерами располагается на стыке важной части исторического полуострова и современного Стамбула. Роскошные номера, декорированные в стиле величественных османских дворцов, подарят нашим гостям изысканный отдых в окружении древних руин Османской империи и унесут в путешествие во времени, пропитанное сказочной атмосферой. Знаменитое турецкое гостеприимство подарит незабываемое путешествие. Отель наполнит яркими красками ваш отдых в Стамбуле и подарит уникальную возможность получить максимум приятных впечатлений от Стамбула.</p>
             </div>
-            <img src="{{url_for('templates', path='/kat_1_govde.png.webp')}}">
+            <img src="{{url_for('templates', path='/root/kat_1_govde.png.webp')}}">
         </div>
         <div class="reviews-wrapper">
             <p class="para_title">Отзывы гостей</p>
