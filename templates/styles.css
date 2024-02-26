@@ -25,7 +25,6 @@ a:active {
     color: black;
 }
 
-
 .title{
     position: absolute;
     z-index: 100;
@@ -74,15 +73,18 @@ a:active {
 }
 
 .greeting{
-    background-image: url('romsl4.webp');
     position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("romsl4.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
     top: 0px;
     left: 0px;
-    width: 1920px;
-    height: 900px;
 }
 
 .about-us{
+    width: 100%;
     position: absolute;
     margin-top: 950px;
     color: black;
@@ -92,7 +94,6 @@ a:active {
 
 .history{
     display:flex;
-    width: 1920px;
     justify-content: space-around;
 }
 
@@ -112,7 +113,6 @@ a:active {
 }
 
 .reviews-wrapper{
-    width: 1920px;
     border-top: 2px solid black;
     padding-bottom: 50px;
     text-align: center;
