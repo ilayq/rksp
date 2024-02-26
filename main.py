@@ -32,7 +32,7 @@ def get_spa(req: Request):
 
 @app.get('/gallery', response_class=HTMLResponse)
 def get_gallery(req: Request):
-    return templates.TemplateResponse(name='gallery.html', context={'request': req})
+    return templates.TemplateResponse(name='/gallery/gallery.html', context={'request': req})
 
 
 @app.get('/restraunts', response_class=HTMLResponse)

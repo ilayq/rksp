@@ -1,4 +1,4 @@
-body {
+.title {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 100;
@@ -6,31 +6,31 @@ body {
 }
 
 
-a {
+.title a {
     outline: none;
     text-decoration: none;
     padding: 2px 1px 0;
 }
   
-a:link {
-    color: black;
+.title a:link {
+    color: white;
 }
 
-a:visited {
-    color: black;
+.title a:visited {
+    color: white;
 }
 
-a:focus {
+.title a:focus {
     background: none;
 }
 
-a:hover {
+.title a:hover {
     background: none;
 }
 
-a:active {
+.title a:active {
     background: none;
-    color: black;
+    color: white;
 }
 
 .title{
@@ -52,7 +52,9 @@ a:active {
     font-weight:500;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 10px;
     border-bottom: 2px solid white;
+    margin-bottom: 10px;
 }
 
 #phone_number{
@@ -81,72 +83,14 @@ a:active {
     font-weight: 250;
 }
 
-
-.rooms{
-    position: relative;
-    margin-top: 15%;
-}
-
-.rooms p{
-    margin-top: 15%;
-    text-align: center;
-    font-size: 35px;
+.gallery_title{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
     font-weight: 500;
+    font-size: 35px;
+    font-style: normal;
+    margin-top: +200px;
+    text-align: center;
     padding-bottom: 15px;
     border-bottom: 2px solid black;
-}
-
-.rooms img{
-    object-fit: none;
-    object-position: 40% 50%;
-    max-width: 570px;
-    height: 415px;
-    max-height: 415px;
-    border-radius: 30px;
-    margin-left: 150px;
-    margin-right: 150px;
-}
-
-.room_text_left{
-    display: flex;
-}
-
-.roombox{
-    padding-top: 85px;
-    display: flex;
-    justify-content: center;
-    margin-left: 15%;
-    margin-right: 15%;
-}
-
-.room_text_right{
-    display: flex;
-}
-
-.description{
-    max-width: 400px;
-    font-weight: 350;
-}
-
-
-footer{
-    position:absolute;
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-    background-color: rgb(30, 30, 30);
-    left: 0px;
-    right: 0px;
-    height: 400px;
-    color: white;
-}
-
-.copyrights{
-    position: absolute;
-    font-size: 20px;
-    bottom: 10px;
-}
-
-.copyrights a{
-    color:white;
 }
