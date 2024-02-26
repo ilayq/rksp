@@ -94,3 +94,25 @@
     padding-bottom: 15px;
     border-bottom: 2px solid black;
 }
+
+footer{
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    background-color: rgb(30, 30, 30);
+    left: 0px;
+    right: 0px;
+    height: 400px;
+    color: white;
+}
+
+.copyrights{
+    position: absolute;
+    font-size: 20px;
+    bottom: 10px;
+}
+
+.copyrights a{
+    color:white;
+}
