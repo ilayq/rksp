@@ -28,8 +28,8 @@ a:active {
 .title{
     position: absolute;
     z-index: 100;
-    top: 0px;
-    left: 0px;
+    top: 0%;
+    left: 0%;
     background-color: rgb(108, 98, 98, 0.7);
     right: 0px;
     color: white
@@ -85,11 +85,12 @@ a:active {
 
 .about-us{
     width: 100%;
-    position: absolute;
-    margin-top: 950px;
+    position: relative;
+    /* margin-top: 950px; */
+    margin-top: 50%;
     color: black;
     border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid black; */
 }
 
 .history{
@@ -123,8 +124,8 @@ a:active {
     justify-content: space-around;
 }
 .review{
-    width: 400px;
-    height: 250px;
+    max-width: 400px;
+    max-height: 350px;
     background-color: rgb(211, 217, 216);
     border-radius: 5%;
     margin: auto;
@@ -136,7 +137,7 @@ a:active {
 
 footer{
     position:absolute;
-    top: 1880px;
+    /* top: 1880px; */
     display: flex;
     justify-content: center;
     background-color: rgb(30, 30, 30);
