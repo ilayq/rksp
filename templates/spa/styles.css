@@ -1,0 +1,120 @@
+.title {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+
+.title a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+}
+  
+.title a:link {
+    color: white;
+}
+
+.title a:visited {
+    color: white;
+}
+
+.title a:focus {
+    background: none;
+}
+
+.title a:hover {
+    background: none;
+}
+
+.title a:active {
+    background: none;
+    color: white;
+}
+
+.title{
+    position: absolute;
+    z-index: 100;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(0, 0, 0, 1);
+    right: 0px;
+    color: white
+}
+
+.title a{
+    color: white;
+}
+
+#contacts{
+    font-size: 20px;
+    font-weight:500;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+    margin-bottom: 10px;
+}
+
+#phone_number{
+    justify-content: left;
+    margin-top: +35px;
+    margin-left: +200px;
+}
+
+#logo{
+    justify-content: center;
+}
+
+#book_link{
+    justify-content: right;
+    margin-top: +35px;
+    margin-right: +200px;
+}
+
+#navbar{
+    margin-left: 15%;
+    margin-right: 15%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    font-weight: 250;
+}
+
+.spa_title{
+    margin-top: 10%;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.content{
+    max-width: 75%;
+    margin-left: 15%;
+}
+
+footer{
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    background-color: rgb(30, 30, 30);
+    left: 0px;
+    right: 0px;
+    height: 400px;
+    color: white;
+}
+
+.copyrights{
+    position: absolute;
+    font-size: 20px;
+    bottom: 10px;
+}
+
+.copyrights a{
+    color:white;
+}
