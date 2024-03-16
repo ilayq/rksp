@@ -1,46 +1,47 @@
-from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
+import uvicorn
+from fastapi import FastAPI
+from api.models import Status, ExistingUser, UserRegister, UserLogin, Room, RoomBooking, BookingPeriod
+import api.handlers as h
 
 
 app = FastAPI()
-app.mount('/templates', StaticFiles(directory='templates'), name='templates')
-
-templates = Jinja2Templates(directory='templates')
 
 
-@app.get('/', response_class=HTMLResponse)
-def root(req: Request):
-    return templates.TemplateResponse(name='/root/index.html', context={'request': req})
+@app.get('/user')
+async def user_info(user_id: int) -> ExistingUser:
+    return await h.user_info(user_id)
 
 
-@app.get('/rooms', response_class=HTMLResponse)
-def get_rooms(req: Request):
-    return templates.TemplateResponse(name='/rooms/rooms.html', context={'request': req})
+@app.post('/user/register')
+async def register_user(user_data: UserRegister) -> Status:
+    return await h.register_user(user_data)
 
 
-@app.get('/history', response_class=HTMLResponse)
-def get_history(req: Request):
-    return templates.TemplateResponse(name='/history/history.html', context={'request': req})
+@app.post('/user/login')
+async def login_user(user: UserLogin):
+    ...
 
 
-@app.get('/spa', response_class=HTMLResponse)
-def get_spa(req: Request):
-    return templates.TemplateResponse(name='/spa/spa.html', context={'request': req})
+@app.put('/user/update')
+async def update_user(user: ExistingUser) -> Status:
+    return await h.update_user(user)
 
 
-@app.get('/gallery', response_class=HTMLResponse)
-def get_gallery(req: Request):
-    return templates.TemplateResponse(name='/gallery/gallery.html', context={'request': req})
+@app.get('/rooms')
+async def rooms() -> list[Room]:
+    return await h.get_rooms()
 
 
-@app.get('/restraunts', response_class=HTMLResponse)
-def get_restraunts(req: Request):
-    return templates.TemplateResponse(name='/restraunts/restraunts.html', context={'request': req})
+@app.post('/rooms/book')
+async def room_book(booking_info: RoomBooking) -> Status:
+    return await h.book_room(booking_info)
+
+
+@app.get('/rooms/available')
+async def rooms_availability(check_in_timestamp: int, check_out_timestamp: int) -> list[Room]:
+    period = BookingPeriod(checkin_timestamp=check_in_timestamp, checkout_timestamp=check_out_timestamp)
+    return await h.available_rooms(period)
 
 
 if __name__ == '__main__':
-    import uvicorn
-
-    uvicorn.run('main:app', host='127.0.0.1', port=80, reload=True, reload_includes=['*.html', '*.css'])
+    uvicorn.run('main:app')

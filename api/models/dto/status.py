@@ -1,5 +1,6 @@
 from enum import Enum
 from pydantic import BaseModel
+from typing import Union
 
 
 class StatusEnum(Enum):
@@ -9,4 +10,4 @@ class StatusEnum(Enum):
 
 class Status(BaseModel):
     status: StatusEnum
-    comment: str
+    comment: Union[str, None]
