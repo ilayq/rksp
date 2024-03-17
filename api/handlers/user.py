@@ -1,6 +1,7 @@
 from sqlalchemy import select, update
 from ..models.orm import UserORM, engine, session
 from ..models.dto import UserRegister, Status, StatusEnum, ExistingUser
+from ..hashing import encode
 
 
 async def user_info(user_id: int) -> ExistingUser:
@@ -18,7 +19,7 @@ async def register_user(user_data: UserRegister) -> Status:
         email=user_data.email,
         phone_number=user_data.phone_number,
         country=user_data.country,
-        password=user_data.password
+        password=await encode(user_data.password)
     )
     try:
         async with session.begin() as db:

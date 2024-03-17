@@ -1,3 +1,4 @@
+from .. import ExistingUser
 from ..models import Room, Status, RoomBooking, BookingPeriod, StatusEnum
 from ..models import RoomORM, BookingORM as BookingORM
 
@@ -15,7 +16,7 @@ async def get_rooms() -> list[RoomORM]:
     return rooms
 
 
-async def book_room(data: RoomBooking) -> Status:
+async def book_room(data: RoomBooking, user: ExistingUser) -> Status:
     available = await available_rooms(data.period)
     available = [room.room_class_id for room in available]
     if data.room.room_class_id not in available:
@@ -24,7 +25,7 @@ async def book_room(data: RoomBooking) -> Status:
         async with session.begin() as db:
             orm = BookingORM(
                 room_type=data.room.room_class_id,
-                user_id=data.guest.id,
+                user_id=user.id,
                 guests_num=data.num_guests,
                 check_in=data.period.checkin_timestamp,
                 check_out=data.period.checkout_timestamp,

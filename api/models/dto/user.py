@@ -9,17 +9,13 @@ class BaseUser(BaseModel):
     country: str
 
 
-class UserLogin(BaseModel):
-    login: str
-    password: str
-
-
 class UserRegister(BaseUser):
     password: str
 
 
 class ExistingUser(BaseUser):
     id: int
+    password: str
 
 
     @classmethod
@@ -30,5 +26,6 @@ class ExistingUser(BaseUser):
             surname=t[2],
             email=t[3],
             phone_number=t[4],
-            country=t[5]
+            country=t[5],
+            password=t[6],
         )

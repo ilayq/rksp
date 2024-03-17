@@ -31,7 +31,6 @@ class BookingPeriod(BaseModel):
 
 class RoomBooking(BaseModel):
     room: Room
-    guest: ExistingUser
     num_guests: int
     period: BookingPeriod
     special_request: str

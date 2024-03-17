@@ -1,6 +1,12 @@
 import uvicorn
-from fastapi import FastAPI
-from api.models import Status, ExistingUser, UserRegister, UserLogin, Room, RoomBooking, BookingPeriod
+from fastapi import FastAPI, Depends, HTTPException
+from typing import Annotated
+
+from fastapi.security import OAuth2PasswordRequestForm
+
+from api.models import Status, ExistingUser, UserRegister, Room, RoomBooking, BookingPeriod
+from api.auth import get_user,  get_cur_user
+from api import encode, make_token
 import api.handlers as h
 
 
@@ -8,8 +14,8 @@ app = FastAPI()
 
 
 @app.get('/user')
-async def user_info(user_id: int) -> ExistingUser:
-    return await h.user_info(user_id)
+async def user_info(user: Annotated[ExistingUser, Depends(get_cur_user)]) -> ExistingUser | None:
+    return await h.user_info(user.id)
 
 
 @app.post('/user/register')
@@ -18,12 +24,16 @@ async def register_user(user_data: UserRegister) -> Status:
 
 
 @app.post('/user/login')
-async def login_user(user: UserLogin):
-    ...
+async def login_user(form_data: Annotated[OAuth2PasswordRequestForm, Depends()]):
+    user = await get_user(form_data.username)
+    hashed_pwd = await encode(form_data.password)
+    if hashed_pwd != user.password:
+        raise HTTPException(status_code=400, detail="Incorrect username or password")
+    return {"access_token": await make_token(user), "token_type": "bearer"}
 
 
 @app.put('/user/update')
-async def update_user(user: ExistingUser) -> Status:
+async def update_user(user: Annotated[ExistingUser, Depends(get_cur_user)]) -> Status:
     return await h.update_user(user)
 
 
@@ -33,8 +43,8 @@ async def rooms() -> list[Room]:
 
 
 @app.post('/rooms/book')
-async def room_book(booking_info: RoomBooking) -> Status:
-    return await h.book_room(booking_info)
+async def room_book(booking_info: RoomBooking, user: Annotated[ExistingUser, Depends(get_cur_user)]) -> Status:
+    return await h.book_room(booking_info, user)
 
 
 @app.get('/rooms/available')
