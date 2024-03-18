@@ -33,8 +33,10 @@ async def login_user(form_data: Annotated[OAuth2PasswordRequestForm, Depends()])
 
 
 @app.put('/user/update')
-async def update_user(user: Annotated[ExistingUser, Depends(get_cur_user)]) -> Status:
-    return await h.update_user(user)
+async def update_user(new_user: ExistingUser, user: Annotated[ExistingUser, Depends(get_cur_user)]) -> Status:
+    if user.id != new_user.id:
+        raise HTTPException(status_code=401, detail="Incorrect id")
+    return await h.update_user(new_user)
 
 
 @app.get('/rooms')
