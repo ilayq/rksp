@@ -12,6 +12,9 @@ async def init():
     cur.execute("insert into rooms(room_name, num_rooms, num_guests, area, description, room_amount)\
                 values ('lux', 2, 2, 20, 'super room', 2)")
 
+    con.commit()
+    con.close()
+
 
 if __name__ == '__main__':
     import asyncio
